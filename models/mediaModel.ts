@@ -15,6 +15,10 @@ export class MediaModel {
     validateMediaFiles(): boolean {
         return this.filePath1 && this.filePath2 && this.hlsUrl ? true : false;
     }
-
+    // Example function to generate HLS URL (could be expanded)
+    async generateHLS(): Promise<string> {
+        // Here you could implement actual logic to generate an HLS stream if necessary
+        return `/hls_output/${this.metadata.title}.m3u8`;
+    }
     // Add more methods to interact with your media if needed, like fetching additional metadata, etc.
 }
