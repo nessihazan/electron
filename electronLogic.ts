@@ -7,7 +7,8 @@ export const createWindow = (): BrowserWindow => {
     const win = new BrowserWindow({
         width: 800,
         height: 600,
-        webPreferences: {
+         webPreferences: {
+            preload: __dirname + '/preload.ts',
             nodeIntegration: true,
         },
     });
