@@ -1,6 +1,6 @@
 // controllers/mediaController.ts
 import { ipcMain } from 'electron';
-import { MediaModel } from '../models/mediaModel';
+import { MediaService } from '../services/mediaService';
 
 export class MediaController {
 
