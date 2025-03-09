@@ -10,6 +10,7 @@
 │── package.json          # Dependencies
 
 
+curl -X POST http://localhost:3000/play-media -H "Content-Type: application/json" -d '{"mediaId": "12345"}'
 
 ✅ How It Works
 	1.	Express Server (server.ts)
