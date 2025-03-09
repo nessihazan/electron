@@ -3,6 +3,9 @@
 ├── /controllers
 │   └── mediaController.ts  (Handles the media logic and API request routing)
 │
+├── /models
+│   └── mediaModel.ts              # Model that handles media-related data and actions
+│
 ├── /services
 │   ├── mediaService.ts     (Handles the media service logic and external API calls)
 │   └── ThirdPartyApiClient.ts  (Handles communication with the third-party API)
