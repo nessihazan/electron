@@ -5,7 +5,7 @@ import { MediaService } from '../services/mediaService';
 export class MediaController {
 
     // Method to handle API call and send media data to the view (renderer)
-    static handleMediaRequest(req, res) {
+    static async handleMediaRequest(req, res) {
         const { filePath1, filePath2, metadata, hlsUrl } = req.body;
         
         if (!filePath1 || !filePath2 || !hlsUrl) {
@@ -13,12 +13,13 @@ export class MediaController {
         }
 
         // Create a new MediaModel instance
-        const media = new MediaModel(filePath1, filePath2, metadata, hlsUrl);
+            const media = await MediaService.getMediaById(id);
 
         // Validate media files
         if (!media.validateMediaFiles()) {
             return res.status(400).json({ status: 'error', message: 'Invalid media files' });
         }
+          //  const hlsUrl = await media.generateHLS();
 
         // Send the media data to the view via IPC
         ipcMain.once('play-media', (_event, { mediaData }) => {
@@ -34,8 +35,9 @@ export class MediaController {
             message: 'UI opened and media is playing',
             filePath1,
             filePath2,
-            metadata,
-            hlsUrl
+            metadata
+            //,
+         //   hlsUrl
         });
     }
 }
