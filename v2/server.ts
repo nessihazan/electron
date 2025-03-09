@@ -2,9 +2,12 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import { MediaService } from './services/mediaService';
 import { BrowserWindow, ipcMain } from 'electron';
+//import { MediaController } from './controllers/mediaController';
 
 const app = express();
 app.use(bodyParser.json());
+
+// app.post('/play-media', MediaController.playMedia);
 
 // ✅ API: Trigger Media Playback
 app.post('/play-media', async (req, res) => {
