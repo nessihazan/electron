@@ -26,3 +26,9 @@ curl -X POST http://localhost:3000/play-media -H "Content-Type: application/json
 	•	Receives media data from IPC.
 	•	Updates the audio player source.
 	•	Starts playback automatically.
+
+
+	•	🟢 Controllers → Handle API routes
+	•	🟢 Services → Business logic & API calls
+	•	🟢 Electron → Handles UI & media playback
+
